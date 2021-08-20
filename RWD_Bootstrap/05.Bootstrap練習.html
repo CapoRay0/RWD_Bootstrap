@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap 練習 01</title>
 
-    <!-- 加入Bootstrap 的 css 及 js -->
+    <!-- 加入 Bootstrap 的 css 及 js -->
     <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js">//為了tooltip</script>
     <script src="js/bootstrap.js"></script>
-    <!-- 以上兩行 -->
+    <!-- Bootstrap 需透過 class 來呼叫 -->
 
     <style>
         div {
@@ -20,17 +21,85 @@
 <body>
     <div class="container">
         <div class="row">
+
+            <!-- 漢堡包 -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <!-- 標題~~ -->
+                <a class="navbar-brand">Ray Shop</a>
+                <!-- 漢堡包的按鈕(三槓) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- 漢堡包的選單(內容) -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">選項一</a>
+                    </li>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">選項二</a>
+                    </li>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">選項三</a>
+                    </li>
+                </div>
+            </nav>
+
             <h1>標題文字</h1>
             <p>段落文字...段落文字...段落文字...段落文字...段落文字...</p>
         </div>
         <div class="row">
             <!-- Bootstrap 將版⾯最多細分為12個區塊 -->
             <div class="col-md-4 col-sm-6">
+                <img src="duck.jpg" class="img-fluid">
                 <p>段落文字...段落文字...段落文字...段落文字...段落文字...</p>
                 <p>段落文字...段落文字...段落文字...段落文字...段落文字...</p>
                 <p>段落文字...段落文字...段落文字...段落文字...段落文字...</p>
             </div>
-            <div class="col-md-4 col-sm-6">3</div>
+            <div class="col-md-4 col-sm-6">
+                <table border="1" class="table table-striped table-hover">
+                    <!-- 套用 Bootstrap 的 class="table" 版型效果 -->
+                    <thead>
+                        <tr>
+                            <!-- 將 td 改成 th 能使字體變粗(標題化) -->
+                            <th>欄位一</td>
+                            <td>欄位二</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1-1</td>
+                            <th>1-2</td>
+                        </tr>
+                        <tr>
+                            <td>2-1</td>
+                            <td>2-2</td>
+                        </tr>
+                        <tr>
+                            <td>3-1</td>
+                            <td>3-2</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <form>
+                    <div class="mb-3">
+                        <!-- form-label 與 form-control 是一組的 -->
+                        <label for="nickname" title="請填入暱稱..." data-bs-toggle="tooltip" data-bs-placement="left" class="form-label">暱稱：</label>
+                        <input type="text" class="form-control" id="nickname" name="nickname">
+                    </div>
+                    <div class="form-check form-switch">
+                        <label for ="power" class="form-check-label">啟用：</label>
+                        <input type="checkbox" id="power" class="form-check-input">
+                    </div>
+                </form>
+
+                <button class="btn btn-primary" title="按鈕提示內容...." data-bs-toggle="tooltip" data-bs-placement="top">按鈕一</button>
+                <button class="btn btn-outline-danger">按鈕二</button>
+
+            </div>
             <div class="col-md-4 col-sm-12">4</div>
         </div>
         <!-- ▪ xs – ⼿機（extra small device）
@@ -38,5 +107,12 @@
              ▪ md – 桌上型電腦（medium devices）
              ▪ lg – 寬螢幕電腦（large devices） -->
     </div>
+    <script>
+        // 為了 tooltip
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 </body>
 </html>
