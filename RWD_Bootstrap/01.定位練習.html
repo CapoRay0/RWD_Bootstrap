@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位練習 01</title>
+    <style>
+        div {
+            border: 1px solid coral;
+            background-color: #00ffdd;
+        }
+
+        #d1 {
+            /* static(靜態位置):預設的配置⽅式(預設位置) */
+            position: static;
+            color:yellow;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+
+        #d2 {
+            /* relative(相對位置):與預設所在位置的相對位置 */
+            /* 本身區塊位置保留，後面區塊不受影響 */
+            position: relative;
+            left: 100px; 
+            top: -10px;
+            text-shadow: 2px 2px 5px blue;
+            /* 可以記成left為X軸，top為Y軸 */
+        }
+
+        #d3 {
+            /* absolute(絕對位置):以上層元素的左上⾓為原點基準來指定的絕對位置 */
+            /* 不受原本位置的限制 */
+            position: absolute;
+            left: 50px;
+            top: 20px;
+            width: 40px;
+            height: 5000px;
+            writing-mode: vertical-rl;
+        }
+        
+        #d4 {
+            /* fixed(固定位置):以視窗的內容區域左上⾓為原點基準來指定的絕對位置。 */
+            position: fixed;
+            right: -50px;
+            bottom: 0px;
+            transition: 200ms;
+        }
+
+        #d4:hover {
+            right: 0px;
+            transition: 200ms;
+            /* animation-name: oxxo; */
+            /* animation-duration: 1s; */
+        }
+
+        /* @keyframes oxxo{
+            from{
+                right:-50px;
+            }
+            to{
+                right:0px;
+            }
+        } */
+
+    </style>
+</head>
+<body>
+    <div id="d1">11111第一區塊</div>
+    <div id="d2">22222第二區塊</div>
+    <div id="d3">33333第三區塊</div>
+    <div id="d4">
+        選單：
+        <ul>
+            <li>選項一</li>
+            <li>選項二</li>
+            <li>選項三</li>
+        </ul>
+    </div>
+    <h1>頁尾內容</h1>
+</body>
+</html>

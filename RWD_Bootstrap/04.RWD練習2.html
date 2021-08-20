@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD 練習 02</title>
+    <style>
+        div {
+            border: 1px solid #000000;
+            /* 框線也會站位置，因此下面d2、d3的width不能都是50% */
+            float: left;
+            height: 200px;
+            width: 100%;
+        }
+
+        @media screen and ( min-width: 568px ) {
+            #d2 {
+                width: 49.8%;
+                background-color: aqua;
+            }
+            #d3 {
+                width: 49.8%;
+                background-color: beige;
+            }
+        }
+
+        @media screen and ( min-width: 1024px ) {
+            #d2 , #d3 , #d4 {
+                width: 33%;
+            }
+        }
+
+        img {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">1</div>
+    <div id="d2">
+        <img src="duck.jpg">
+        <p>段落文字...段落文字...段落文字...段落文字...段落文字...段落文字...段落文字...段落文字...</p>
+    </div>
+    <div id="d3">3</div>
+    <div id="d4">4</div>
+</body>
+</html>

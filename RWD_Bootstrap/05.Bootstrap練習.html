@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 練習 01</title>
+
+    <!-- 加入Bootstrap 的 css 及 js -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <!-- 以上兩行 -->
+
+    <style>
+        div {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>標題文字</h1>
+            <p>段落文字...段落文字...段落文字...段落文字...段落文字...</p>
+        </div>
+        <div class="row">
+            <!-- Bootstrap 將版⾯最多細分為12個區塊 -->
+            <div class="col-md-4 col-sm-6">
+                <p>段落文字...段落文字...段落文字...段落文字...段落文字...</p>
+                <p>段落文字...段落文字...段落文字...段落文字...段落文字...</p>
+                <p>段落文字...段落文字...段落文字...段落文字...段落文字...</p>
+            </div>
+            <div class="col-md-4 col-sm-6">3</div>
+            <div class="col-md-4 col-sm-12">4</div>
+        </div>
+        <!-- ▪ xs – ⼿機（extra small device）
+             ▪ sm – 平板（small devices）
+             ▪ md – 桌上型電腦（medium devices）
+             ▪ lg – 寬螢幕電腦（large devices） -->
+    </div>
+</body>
+</html>
